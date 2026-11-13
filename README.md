@@ -13,6 +13,15 @@ web interface around it — no retraining, no gradients.
 - Shows a live confidence ring, class distribution, and a one-variable-at-a-time
   sensitivity chart.
 
+## Dataset
+
+The model's 30 input features come from the **Kepler Confirmed Planets** dataset:
+
+- Kaggle: <https://www.kaggle.com/datasets/melissamonfared/kepler-confirmed-planets>
+
+It provides the orbital, stellar, and sky-position measurements — plus the
+survey and uncertainty flags — used to train the saved classifier.
+
 ## Requirements
 
 - Python 3.10+
@@ -61,8 +70,8 @@ curl -s http://127.0.0.1:5000/api/predict \
 
 ## Notes
 
-- The classifier reproduces patterns and biases in the NASA Exoplanet Archive,
-  not new discoveries.
+- The classifier reproduces patterns and biases in the Kepler Confirmed Planets
+  dataset (NASA Exoplanet Archive), not new discoveries.
 - Feature importance in the UI is the share of tree splits per feature — a
   structural proxy, not a causal ranking.
 - The theme preference is stored in `localStorage`.
